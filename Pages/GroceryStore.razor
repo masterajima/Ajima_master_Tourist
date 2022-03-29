@@ -1,0 +1,99 @@
+﻿@page "/grocerystore"
+@page "/grocerystores"
+<h1>GroceryStore App (@grocerystores.Count(grocerystore => !grocerystore.IsDone))</h1>
+<h3>Find Isle</h3>
+<ul>
+    if(grocerystores!=null)
+    {
+        @foreach (var grocerystore in grocerystores){
+            <table>
+                <thead>
+                    <tr>
+                        <th>QuantiyNumber</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Name</th>
+
+                        </tr>
+                </thead>
+
+            </table>
+                
+            
+                <tbody>
+                     @foreach( var category in grocerystores){
+
+                        }
+                        <tr></tr>
+                            <td>@grocerystore.Title</td>
+                            <td>@grocerystore.quantity</td>
+                            <td>@grocerystore.category</td>
+                                
+                        
+                </tbody>
+                    
+
+                                
+                        
+                
+        
+        <li>@grocerystore.Title</li>
+        <li>
+            <input type="checkbox" @bind="grocerystore.IsDone">
+            <input @bind="grocerystore.Title">
+        </li>
+        <li>@grocerystore.quantity</li>
+        <li>
+            <input type="textbox" @bind="grocerystore.IsDone">
+            <input type="button" @bind="grocerystore.quantity">
+        </li>
+
+    }
+
+    }
+    
+
+</ul>
+<input placeholder="Search Item" @bind="AddItem">
+<button @onclick="AddItem">AddItem</button>
+<input placeholder="Search Item" @bind="DecreaseItem">
+<button @onclick="DecreaseItem">remove item</button>
+
+@code {
+    public bool IsDone{get;set;}
+    public string Title{get;set;}=string.Empty;
+    public int quantity{get;set;}
+    public string category{get;set;}=string.Empty;
+    private string?newgrocerystores;
+    private List<GroceryStore>grocerystores=new();
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+        }
+        private void DecreaseItem(){
+
+        }
+        public void AddItem(){
+
+        }
+
+        private void DisplayItem(){
+            string [] foodItem={"Apple","Milk","Bread","sugar","Onion"};
+            //add list of item
+            if(!string.IsNullOrWhiteSpace(newgrocerystores)){
+                
+                //grocerystores.Add(new GroceryStore{Title})
+                newgrocerystores=string.Empty;
+
+            for(int i=0;i<foodItem.Length;i++){
+Console.WriteLine("Display food item" +foodItem);
+            }
+
+                }
+            }
+            
+
+        }
+
+
+}
