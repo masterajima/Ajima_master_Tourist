@@ -1,6 +1,7 @@
-@inject ProtectedLocalStorage ProtectedLocalStore
+@namespace ajimaGroceryStoreApp.Pages
 
-@if (hasLoaded)
+
+<!--@if (hasLoaded)
 {
     
         @ChildContent
@@ -9,14 +10,35 @@
 else
 {
     <p>Loading...</p>
-}
+}-->
 
 @code {
 
     [Parameter] 
     public RenderFragment ChildContent { get; set; }
+     public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }=string.Empty;
+        public string Description { get; set; }=string.Empty;
+        public decimal Price { get; set; }
+    }
+    
+    public class Cart{
+         public Cart ShoppingCart{
+        get{
+            return this.ShoppingCart;
+        }
+        set{
+            this.ShoppingCart=this.ShoppingCart;
+        }
 
-    public Cart ShoppingCart{
+        }
+    }
+    }
+
+
+  /*  public Cart ShoppingCart{
         get{
             return this.ToString();
         }
@@ -25,7 +47,7 @@ else
         }
 
         }
-    }
+    }*/
 
     bool hasLoaded;
 
