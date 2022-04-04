@@ -3,7 +3,21 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
-namespace Quantiy{
+using System;
+namespace ajimaGroceryStoreApp.Pages{
+public class GrocerIsle{
+    public int Quantity{get;set;}
+    public decimal price{get;set;}
+    public string FoodItem{get;set;}
+}
+}
+
+
+
+
+
+
+/*namespace Quantiy{
     public class QuantityGroceryIsle{
         
             private List<Quantity>Quantities;
@@ -31,8 +45,7 @@ namespace Quantiy{
         
     }
 
-/*            public int quantity{
-            get{
+/*       
                 return quantity;
 
             }
@@ -48,3 +61,4 @@ namespace Quantiy{
         public double rate{get;set;}
     }
 }*g/
+*/
